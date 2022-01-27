@@ -1,4 +1,4 @@
-/etc/resolv.conf#!/bin/bash
+#!/bin/bash
 
 
 echo "resolvconf=NO" >> /etc/resolvconf.conf
