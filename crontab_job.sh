@@ -1,15 +1,5 @@
 #!/bin/bash
 
-ACTUAL=`df -h /|grep -v File|awk '{print $5}'|rev|cut -c2-|rev`
-TARGET=80
-
-if [ $((ACTUAL)) -gt $((TARGET)) ]
-then 
-	wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync.sh -O - | bash 
-fi
-root@diapolinux:~# more prova.sh 
-#!/bin/bash
-
 cat << 'EOF' > /usr/bin/fs_check.sh
 #!/bin/bash
 
