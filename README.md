@@ -5,11 +5,11 @@ All the commands are taken from this public community document:
 https://docs.google.com/document/d/1Z55jWvkQYYR5dNFgcEkbCIrR3EL5rIxhlPWYNiz0COE/edit#heading=h.dduh3jiftggt
 
 
-# Hot to run clear_resync.sh:
+# Hot to run clear_resync.sh (from Nebra snapshot):
 
 wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync.sh -O - | sudo bash
 
-# Hot to run clear_resync.sh:
+# Hot to run clear_resync_sensecap.sh (from SenseCAP snapshot - thanks to The Rouge for integration):
 
 wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync_sensecap.sh -O - | sudo bash
 
