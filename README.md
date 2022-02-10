@@ -13,6 +13,10 @@ wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_r
 
 wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync_sensecap.sh -O - | sudo bash
 
+# Hot to run clear_resync_v2.sh:
+
+wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync_v2.sh -O - | sudo bash
+
 
 # Hot to run crontab_job.sh:
 
