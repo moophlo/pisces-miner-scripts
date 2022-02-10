@@ -9,6 +9,10 @@ https://docs.google.com/document/d/1Z55jWvkQYYR5dNFgcEkbCIrR3EL5rIxhlPWYNiz0COE/
 
 wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync.sh -O - | sudo bash
 
+# Hot to run clear_resync.sh:
+
+wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync_sensecap.sh -O - | sudo bash
+
 
 # Hot to run crontab_job.sh:
 
