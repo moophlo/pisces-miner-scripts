@@ -32,24 +32,17 @@ else
 
 fi
 
-
-
-sudo docker exec $minername cp /opt/miner/bin/miner /opt/miner/bin/miner_load
-sudo docker cp $minername:/opt/miner/bin/miner ~/miner_load
-sudo sed -i 's/export RELX_RPC_TIMEOUT/RELX_RPC_TIMEOUT=3600\nexport RELX_RPC_TIMEOUT/g' ~/miner_load
-sudo docker cp ~/miner_load $minername:/opt/miner/bin/miner_load
-
 echo -n "Pausing sync... "
-sudo docker exec  $minername  miner repair sync_pause
+sudo docker exec  $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner repair sync_pause'
 echo -n "Cancelling pending sync... "
-sudo docker exec  $minername  miner repair sync_cancel
+sudo docker exec  $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_cancel'
 
 echo "Loading snapshot. This can take up to 20 minutes"
 sudo cp /tmp/snap-$newheight /home/pi/hnt/miner/snap/snap-$newheight
 
 > /tmp/load_result
 now=`date +%s`
-((docker exec  $minername  miner_load snapshot load /var/data/snap/snap-$newheight > /tmp/load_result) > /dev/null 2>&1 &)
+((docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner_load snapshot load /var/data/snap/snap-$newheight > /tmp/load_result') > /dev/null 2>&1 &)
 #(((sleep 30 && echo "ok") > /tmp/load_result) > /dev/null 2>&1 &)
 while :
 do
@@ -63,7 +56,7 @@ do
        sudo rm -f /home/pi/hnt/miner/snap/snap-$newheight
        rm /tmp/load_result
        echo -n "Resuming sync... "
-       docker exec  $minername  miner repair sync_resume
+       docker exec  $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_resume'
        echo "Done!"
        break;
     elif [ "$result" = "" ];then
