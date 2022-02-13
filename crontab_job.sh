@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 cat << 'EOF' > /usr/bin/clear_resync.sh
 #!/bin/bash
 
@@ -33,9 +31,9 @@ else
 fi
 
 echo -n "Pausing sync... "
-sudo docker exec  $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner repair sync_pause'
+sudo docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner repair sync_pause'
 echo -n "Cancelling pending sync... "
-sudo docker exec  $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_cancel'
+sudo docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_cancel'
 
 echo "Loading snapshot. This can take up to 20 minutes"
 sudo cp /tmp/snap-$newheight /home/pi/hnt/miner/snap/snap-$newheight
@@ -56,7 +54,7 @@ do
        sudo rm -f /home/pi/hnt/miner/snap/snap-$newheight
        rm /tmp/load_result
        echo -n "Resuming sync... "
-       docker exec  $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_resume'
+       docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_resume'
        echo "Done!"
        break;
     elif [ "$result" = "" ];then
