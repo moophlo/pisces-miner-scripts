@@ -1,28 +1,11 @@
-# This is a simple script for lazy people to clear blockchian data and resync the Pisces miner
+# This is a collection of scripts useful for Pisces miners P100
 
-All the commands are taken from this public community document:
-
-https://docs.google.com/document/d/1Z55jWvkQYYR5dNFgcEkbCIrR3EL5rIxhlPWYNiz0COE/edit#heading=h.dduh3jiftggt
+# DISCLAIMER: Only use this scipts if you know what you are doing!!!
 
 
-# Hot to run clear_resync.sh (from Nebra snapshot):
+# Hot to run clear_resync.sh:
 
 wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync.sh -O - | sudo bash
-
-
-# Hot to run clear_resync_sensecap.sh (from SenseCAP snapshot - thanks to The Rouge for integration):
-
-wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync_sensecap.sh -O - | sudo bash
-
-
-# Hot to run clear_resync_v2.sh:
-
-wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync_v2.sh -O - | sudo bash
-
-
-# Hot to run clear_resync_v3.sh:
-
-wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync_v3.sh -O - | sudo bash
 
 
 # Hot to run crontab_job.sh:
