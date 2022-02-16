@@ -1,6 +1,6 @@
 # This is a collection of scripts useful for Pisces miners P100
 
-# DISCLAIMER: Only use this scipts if you know what you are doing!!!
+# DISCLAIMER: Only use this scripts if you know what you are doing!!!
 
 
 # Hot to run clear_resync.sh:
