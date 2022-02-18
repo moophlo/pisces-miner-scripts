@@ -4,7 +4,7 @@ SNAPSHOT_S=`curl --silent https://snapshots-wtf.sensecapmx.cloud/latest-snap.jso
 SNAPSHOT_N=`curl --silent https://helium-snapshots.nebra.com/latest.json|awk '{print $2}'| rev | cut -c2- | rev`
 
 
-if [ $((SNAPSHOT_S)) -gt $((SNAPSHOT_N)) ]
+if [ $((SNAPSHOT_S)) -ge $((SNAPSHOT_N)) ]
 
 then
 
