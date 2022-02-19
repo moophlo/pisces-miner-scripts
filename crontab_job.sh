@@ -68,7 +68,7 @@ do
        echo "Error: Snapshot could not be loaded. Try again"
        break;
     fi
-    sleep 10
+    sleep 120
 done
 else
 minername=$(docker ps -a|grep miner|awk -F" " '{print $NF}')
@@ -126,7 +126,7 @@ do
        echo "Error: Snapshot could not be loaded. Try again"
        break;
     fi
-    sleep 10
+    sleep 120
 done
 fi
 EOF
