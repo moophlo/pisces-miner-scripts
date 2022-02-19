@@ -44,7 +44,7 @@ echo "Loading snapshot. This can take up to 20 minutes"
 sudo cp /tmp/snap-$newheight /home/pi/hnt/miner/snap/snap-$newheight
 > /tmp/load_result
 now=`date +%s`
-((docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner_load snapshot load /var/data/snap/snap-$newheight > /tmp/load_result') > /dev/null 2>&1 &)
+((docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner snapshot load /var/data/snap/snap-$newheight > /tmp/load_result') > /dev/null 2>&1 &)
 #(((sleep 30 && echo "ok") > /tmp/load_result) > /dev/null 2>&1 &)
 while :
 do
@@ -103,7 +103,7 @@ echo "Loading snapshot. This can take up to 20 minutes"
 sudo cp /tmp/snap-$newheight /home/pi/hnt/miner/snap/snap-$newheight
 > /tmp/load_result
 now=`date +%s`
-((docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner_load snapshot load /var/data/snap/snap-$newheight > /tmp/load_result') > /dev/null 2>&1 &)
+((docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner snapshot load /var/data/snap/snap-$newheight > /tmp/load_result') > /dev/null 2>&1 &)
 #(((sleep 30 && echo "ok") > /tmp/load_result) > /dev/null 2>&1 &)
 while :
 do
