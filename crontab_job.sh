@@ -40,7 +40,8 @@ fi
 #sudo docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner repair sync_pause'
 #echo -n "Cancelling pending sync... "
 #sudo docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_cancel'
-echo "Loading snapshot. This can take up to 20 minutes"
+echo "Start loading snap-$newheight at `date +%H:%M`. This can take up to 60 minutes"
+sudo rm -f /home/pi/hnt/miner/snap/snap-*
 sudo cp /tmp/snap-$newheight /home/pi/hnt/miner/snap/snap-$newheight
 > /tmp/load_result
 now=`date +%s`
@@ -58,8 +59,6 @@ do
        sudo rm -f /home/pi/hnt/miner/snap/snap-$newheight
        rm /tmp/load_result
        echo -n "Resuming sync... "
-       sudo docker stop $minername
-       sudo docker start $minername
        #docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_resume'
        echo "Done!"
        break;
@@ -99,7 +98,8 @@ fi
 #sudo docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600; miner repair sync_pause'
 #echo -n "Cancelling pending sync... "
 #sudo docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_cancel'
-echo "Loading snapshot. This can take up to 20 minutes"
+echo "Start loading snap-$newheight at `date +%H:%M`. This can take up to 60 minutes"
+sudo rm -f /home/pi/hnt/miner/snap/snap-*
 sudo cp /tmp/snap-$newheight /home/pi/hnt/miner/snap/snap-$newheight
 > /tmp/load_result
 now=`date +%s`
@@ -117,8 +117,6 @@ do
        sudo rm -f /home/pi/hnt/miner/snap/snap-$newheight
        rm /tmp/load_result
        echo -n "Resuming sync... "
-       sudo docker stop $minername
-       sudo docker start $minername
        #docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=3600;miner repair sync_resume'
        echo "Done!"
        break;
