@@ -21,3 +21,6 @@ This script will override the DNS servers pushed from the DHCP server in your LA
 wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/fixed_dns.sh -O - | sudo bash
 
 
+# How to upgrade clear_resync.sh and crontab_job.sh to latest version:
+
+sudo wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_resync.sh -O /usr/bin/clear_resync.sh
