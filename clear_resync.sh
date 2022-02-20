@@ -54,8 +54,6 @@ do
        sudo rm -f /home/pi/hnt/miner/snap/snap-$newheight
        rm /tmp/load_result
        echo -n "Resuming sync... "
-       sudo docker stop $minername
-       sudo docker start $minername
        docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=600;miner repair sync_resume'
        echo "Done!"
        break;
@@ -116,8 +114,6 @@ do
        sudo rm -f /home/pi/hnt/miner/snap/snap-$newheight
        rm /tmp/load_result
        echo -n "Resuming sync... "
-       sudo docker stop $minername
-       sudo docker start $minername
        docker exec $minername sh -c 'export RELX_RPC_TIMEOUT=600;miner repair sync_resume'
        echo "Done!"
        break;
