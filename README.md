@@ -28,7 +28,7 @@ sudo wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/cl
 
 
 
-# PERFORMANCE TWEAKS FROM @INIGOFLORES
+# PERFORMANCE TWEAKS FROM INIGOFLORES (https://github.com/inigoflores)
 # Miner Peerbook Settings Tweak 
 
 This tool downloads a modified version of sys.config that dramatically reduces the "not found" issue that is affecting almost every Helium miner.
