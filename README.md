@@ -10,7 +10,7 @@ wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/clear_r
 
 
 # How to run crontab_job.sh:
-This script will install in crontab a job that everyday at midnight will run a check on root filesystem free space left and if it's less than 20$ free will run the clean_resync.sh script
+This script will install in crontab a job that everyday at midnight will run a check on root filesystem free space left and if it's less than 20% free will run the clean_resync.sh script
 
 wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/crontab_job.sh -O - | sudo bash
 
