@@ -56,3 +56,8 @@ These values have shown to increase the peer books size to around 200,000. In or
 ### Restore backup of sys.config 
 
     wget https://raw.githubusercontent.com/inigoflores/pisces-p100-tools/main/setting_tweaks/restore.sh -O - | sudo bash
+
+# How to install Mysterium Network Node on Pisces miner:
+This script will install the node software, at the end of the script you'll have to manually accept license agreement. After that you can reach the MYST node configuration page using http://<NODE IP>:4449 on the browser
+
+wget https://raw.githubusercontent.com/moophlo/pisces-miner-scripts/main/myst_node_install.sh -O - | sudo bash
