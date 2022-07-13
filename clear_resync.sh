@@ -1,15 +1,16 @@
 #!/bin/bash
 
-SNAPSHOT_S=`curl --silent https://snapshots-wtf.sensecapmx.cloud/latest-snap.json|awk -F':' '{print $3}'| rev | cut -c2- | rev`
-SNAPSHOT_N=`curl --silent https://helium-snapshots.nebra.com/latest.json|awk '{print $2}'| rev | cut -c2- | rev`
+apt-get install -y jq
 
+SNAPSHOT_S=`curl --silent https://snapshots-wtf.sensecapmx.cloud/latest-snap.json | jq '.height'`
+SNAPSHOT_N=`curl --silent https://helium-snapshots.nebracdn.com/latest.json | jq '.height'`
 
 if [ $((SNAPSHOT_S)) -ge $((SNAPSHOT_N)) ]
 
 then
 
 minername=$(docker ps -a|grep miner|awk -F" " '{print $NF}')
-newheight=`curl --silent https://snapshots-wtf.sensecapmx.cloud/latest-snap.json|awk -F':' '{print $3}'| rev | cut -c2- | rev`
+newheight=`curl --silent https://snapshots-wtf.sensecapmx.cloud/latest-snap.json | jq '.height'`
 echo "Snapshot height is $newheight";
 echo "Stopping the miner... "
 sudo docker stop $minername
@@ -69,7 +70,7 @@ done
 else
 
 minername=$(docker ps -a|grep miner|awk -F" " '{print $NF}')
-newheight=`curl --silent https://helium-snapshots.nebra.com/latest.json|awk '{print $2}'| rev | cut -c2- | rev`
+newheight=`curl --silent https://helium-snapshots.nebracdn.com/latest.json | jq '.height'`
 echo "Snapshot height is $newheight";
 echo "Stopping the miner... "
 sudo docker stop $minername
